@@ -1,0 +1,35 @@
+#:import utils kivy.utils
+<MyGridLayout>
+
+    read_file_name:read_file_name
+    column:column
+    write_file_name:write_file_name
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+            Label:
+                text: "File name"
+            TextInput:
+                id: read_file_name
+                multiline:False
+
+            Label:
+                text: "Column name"
+            TextInput:
+                id: column
+                multiline:False
+
+            Label:
+                text: "Output file name"
+            TextInput:
+                id: write_file_name
+                multiline:False
+
+        Button:
+            text: "Submit"
+            font_size: 32
+            on_press: root.press()
